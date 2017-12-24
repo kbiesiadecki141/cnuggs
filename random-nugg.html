@@ -24,13 +24,10 @@
 <!-- RANDOM NUGG GENERATOR -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
 <script type="text/javascript">
-
-    // TODO: add button to clear nuggs from screen
     var imgArr = ['images/nugg-dino.png',
                       'images/nugg-three.png',
                       'images/nugg-love.png']
     var imgIndex = 0
-
     $(document).click(function(e){
         var randImg = Math.floor(Math.random() * imgArr.length);
         var nugget = $('<img>')
@@ -50,9 +47,16 @@
         imgIndex++
     })
 
+    $(document).keydown(function(event){
+        if(event.which == 68){
+            $(".nuggets").remove()
+        }
+    })
+
 </script>
 
 <body id="document">
     <h1>CHICKEN NUGGETS!!!!!</h1>
+    <h2>Press D to delete those nuggets</h2>
 </body>
 </html>
