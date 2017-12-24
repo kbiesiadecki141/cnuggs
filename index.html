@@ -4,8 +4,47 @@
 <meta charset="UTF-8">
 <title>chicken nuggs</title>
 </head>
-<body>
-what am i doing with my life <br>
-update: still don't know, but at least im making a website
+<style type="text/css">
+    *{
+        font-family: Arial;
+        position: relative;
+    }
+
+    h1{
+        font-size: 100px;
+        color: red;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+<script type="text/javascript">
+
+    var imageArray = ['https://www.spreadshirt.com/image-server/v1/mp/designs/1001148808,width=178,height=178/chicken-shirt.png',
+    'https://78.media.tumblr.com/47fe0dcc9873b821ef0db3732367a4e2/tumblr_mtp16mPR221qimp33o1_500.png',
+    'https://data.whicdn.com/images/58126705/original.png']
+    var imgIndex = 0
+
+    $(document).click(function(e){
+        var randImg = Math.floor(Math.random() * imageArray.length);
+        var nugget = $('<img>')
+            .attr({
+                'src': imageArray[randImg],
+                'class':'nuggets',
+                'id': 'nugg' + imgIndex
+            })
+            .css({
+                position:"absolute",
+                left:e.pageX - 150,
+                top:e.pageY - 150,
+                width: '300px',
+                height: '300px',
+                opacity:1.0
+            }).appendTo('#document')
+        imgIndex++
+    })
+
+</script>
+<body id="document">
+    <h1>CHICKEN NUGGETS!!!!!</h1>
+    <h2>Click!</h2>
 </body>
 </html>
