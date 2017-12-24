@@ -1,3 +1,5 @@
+# ChickenNuggs.com
+## Backstory
 chickennuggs.com was created with a vision: expressing love for chicken nuggets. 
 
 Just kidding. It was actually created because one fateful, wintry December day, I wondered to myself: "Does obama.com exist?" Turns out, it does not. And I thought it was strange. 
