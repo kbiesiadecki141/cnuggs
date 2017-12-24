@@ -4,13 +4,13 @@
     <!-- NAVIGATION BAR -->
     <ul id="nav">
         <li><a href=index.html> Home </a></li>
-        <li><a href =random-nugg.html> Random Nugg Generator </a></li>
+        <li><a href=random-nugg.html> Random Nugg Generator </a></li>
         <li><a> Find a Nugg </a></li>
         <li><a> Marry a Nugg </a></li>
         <li><a> But, What is a Nugg? </a></li>
         <li><a> WTF is This? </a>
             <ul>
-                <li><a>The Team</a></li>
+                <li><a href=bio.html>The Team</a></li>
                 <li><a>Our Mission</a></li>
             </ul>
         </li>
@@ -26,15 +26,15 @@
 <script type="text/javascript">
     var imgArr = ['images/nugg-dino.png',
                       'images/nugg-three.png',
-                      'images/nugg-love.png']
-    var imgIndex = 0
+                      'images/nugg-love.png'];
+    var imgCount = 0
     $(document).click(function(e){
         var randImg = Math.floor(Math.random() * imgArr.length);
         var nugget = $('<img>')
             .attr({
                 'src': imgArr[randImg],
                 'class':'nuggets',
-                'id': 'nugg' + imgIndex
+                'id': 'nugg' + imgCount
             })
             .css({
                 position:"absolute",
@@ -43,13 +43,13 @@
                 width: '300px',
                 height: '300px',
                 opacity:1.0
-            }).appendTo('#document')
-        imgIndex++
+            }).appendTo('#document');
+        imgCount++;
     })
-
     $(document).keydown(function(event){
         if(event.which == 68){
-            $(".nuggets").remove()
+            $(".nuggets").remove();
+            imgCount = 0;
         }
     })
 
@@ -57,6 +57,7 @@
 
 <body id="document">
     <h1>CHICKEN NUGGETS!!!!!</h1>
+    <h2>Click!</h2>
     <h2>Press D to delete those nuggets</h2>
 </body>
 </html>
