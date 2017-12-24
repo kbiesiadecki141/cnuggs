@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <link href='style.css' rel='stylesheet'>
+
+    <!-- NAVIGATION BAR -->
+    <ul>
+        <li><a href=index.html> Home </a></li>
+        <li><a href=random-nugg.html> Random Nugg Generator </a></li>
+        <li><a> Find a Nugg </a></li>
+        <li><a href=marry-a-nugg.html> Marry a Nugg </a></li>
+        <li><a> But, What is a Nugg? </a></li>
+        <li><a> WTF is This? </a>
+            <ul>
+                <li><a>The Team</a></li>
+                <li><a>Our Mission</a></li>
+            </ul>
+        </li>
+    </ul>
+
+<head>
+<meta charset="UTF-8">
+<title>Chicken Nuggs</title>
+</head>
+<br>
+<br>
+<body id="document">
+    <h2> Just say, "I do." </h2>
+    
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+        First Name: <input type="text" name="first"><br>
+        Last Name:  <input type="text" name="last"><br>
+        First Witness: <input type="text" name="wit1"><br>
+        Second Witness: <input type="text" name="wit2"><br>
+    <input type="submit" value="I do!">
+    </form>
+</body>
+
+<?php
+    $first = $last = $wit1 = $wit2 = "";
+    if ($_SERVER["REQUEST METHOD"] == "POST") {
+        if (empty($_POST["first"])) {
+            $first = "";
+        } else {
+            $first = test_input($_POST["first"]);
+        }
+        if (empty($_POST["last"])) {
+            $last = "";
+        } else {
+            $last = test_input($_POST["last"]);
+        }
+        if (empty($_POST["wit1"])) {
+            $wit1 = "";
+        } else {
+            $wit1 = test_input($_POST["wit1"]);
+        }
+        if (empty($_POST["wit2"])) {
+            $wit2222222222222222222222 = "";
+        } else {
+            $wit2 = test_input($_POST["wit2"]);
+        }
+    }
+    
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>
+
+<br>
+<!-- MARRIAGE CERTIFICATE GENERATOR -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+<script type="text/javascript">
+    var canvas = document.createElement("canvas")
+    canvas.width = 1000;
+    canvas.height = 500;
+    var ctx = canvas.getContext("2d")
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, 1000, 500);
+    ctx.font = "30px Arial";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#000000";
+    ctx.fillText("Marriage Certificate", 500, 50);
+    
+    var img = document.createElement("img");
+    img.src = canvas.toDataURL("image/png");
+    document.body.appendChild(img);
+</script>
+
+</html>
