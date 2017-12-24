@@ -5,8 +5,14 @@ body {
     color: white;
 }
 
+#nav{
+    margin: auto;
+    padding-left: 5%;
+    padding-top: 5%;
+    width: 90%;
+}
+
 ul {
-    margin: 0px;
     padding: 0px;
     list-style: none;
 }

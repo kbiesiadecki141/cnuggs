@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
     <link href='style.css' rel='stylesheet'>
-
     <!-- NAVIGATION BAR -->
-    <ul>
+    <ul id="nav">
         <li><a href=index.html> Home </a></li>
-        <li><a> Random Nugg Generator </a></li>
+        <li><a href =random-nugg.html> Random Nugg Generator </a></li>
         <li><a> Find a Nugg </a></li>
         <li><a> Marry a Nugg </a></li>
         <li><a> But, What is a Nugg? </a></li>
@@ -28,16 +26,16 @@
 <script type="text/javascript">
 
     // TODO: add button to clear nuggs from screen
-    var imageArray = ['images/nugg-dino.png',
+    var imgArr = ['images/nugg-dino.png',
                       'images/nugg-three.png',
                       'images/nugg-love.png']
     var imgIndex = 0
 
     $(document).click(function(e){
-        var randImg = Math.floor(Math.random() * imageArray.length);
+        var randImg = Math.floor(Math.random() * imgArr.length);
         var nugget = $('<img>')
             .attr({
-                'src': imageArray[randImg],
+                'src': imgArr[randImg],
                 'class':'nuggets',
                 'id': 'nugg' + imgIndex
             })
@@ -56,6 +54,5 @@
 
 <body id="document">
     <h1>CHICKEN NUGGETS!!!!!</h1>
-    <h2>Click!</h2>
 </body>
 </html>
