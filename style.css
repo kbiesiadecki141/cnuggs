@@ -5,8 +5,26 @@ body {
     color: white;
 }
 
+#nav{
+    margin: auto;
+    padding-left: 5%;
+    padding-top: 5%;
+    width: 90%;
+}
+
+.bio-box{
+    position: relative;
+    padding: 1%;
+    margin: 4%;
+    width: 300px;
+    height: 300px;
+    border: 2px solid green;
+    background-color: red;
+    overflow: scroll;
+    float: left;
+}
+
 ul {
-    margin: 0px;
     padding: 0px;
     list-style: none;
 }
@@ -43,4 +61,11 @@ ul li:hover ul li {
 h1 {
     font-size: 100px;
     color: red;
+    text-align: center;
+}
+
+h2{
+    font-size: 50px;
+    text-align: center;
+    color: blue;
 }
