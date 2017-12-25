@@ -30,6 +30,7 @@
     var imgCount = 0
     $(document).click(function(e){
         var randImg = Math.floor(Math.random() * imgArr.length);
+        var randSize = Math.floor(Math.random() * 350) + 50;
         var nugget = $('<img>')
             .attr({
                 'src': imgArr[randImg],
@@ -38,10 +39,10 @@
             })
             .css({
                 position:"absolute",
-                left:e.pageX - 150,
-                top:e.pageY - 150,
-                width: '300px',
-                height: '300px',
+                left:e.pageX - (randSize/2),
+                top:e.pageY - (randSize/2),
+                width: randSize + 'px',
+                height: randSize + 'px',
                 opacity:1.0
             }).appendTo('#document');
         imgCount++;
@@ -56,8 +57,10 @@
 </script>
 
 <body id="document">
-    <h1>CHICKEN NUGGETS!!!!!</h1>
-    <h2>Click!</h2>
-    <h2>Press D to delete those nuggets</h2>
+    <div class="shadow">
+        <h1>CHICKEN NUGGETS!!!!!</h1>
+        <h2>Click!</h2>
+        <h2>Press D to delete those nuggets</h2>
+    </div>
 </body>
 </html>
