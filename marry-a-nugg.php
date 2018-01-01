@@ -92,26 +92,15 @@ function test_input($data) {
   Second witness: <input type="text" name="wit2" value="<?php echo $wit2;?>">
   <span class="error">* <?php echo $wit2Err;?></span>
   <br><br>
-  <input type="submit" name="submit" value="Submit">  
+  <input type="submit" name="submit" value="Submit"> 
 </form>
 
-<!--
-<?php
-echo "<h2>Your Input:</h2>";
-echo $first;
-echo "<br>";
-echo $last;
-echo "<br>";
-echo $wit1;
-echo "<br>";
-echo $wit2;
-echo "<br>";
-?>
--->
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D3G176wz3u8?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
+<br><br>
 <!-- MARRIAGE CERTIFICATE GENERATOR -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script type="text/javascript">
+<script>
     var canvas = document.createElement("canvas")
     canvas.width = 1000;
     canvas.height = 500;
@@ -123,12 +112,28 @@ echo "<br>";
     ctx.fillStyle = "#000000";
     ctx.fillText("Marriage Certificate", 500, 50);
     var first = "<?php echo $first ?>"
-    ctx.fillText(first, 500, 100);
-    var img = document.createElement("img");
-    img.src = canvas.toDataURL("image/png");
-    document.body.appendChild(img);
-
-
+    var last = "<?php echo $last ?>"
+    var wit1 = "<?php echo $wit1 ?>"
+    var wit2 = "<?php echo $wit2 ?>"
+    
+    if (first && last && wit1 && wit2) {
+        d = new Date();
+        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+                  "October", "November", "December"];
+        date = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+        
+        ctx.fillText("This certifies that", 500, 100);
+        ctx.fillText(first + " " + last, 500, 150);
+        ctx.fillText("and", 500, 200);
+        ctx.fillText("A Chicken Nugget", 500, 250);
+        ctx.fillText("Were Solemnly United In", 500, 300);
+        ctx.fillText("The Bonds of Holy Matrimony", 500, 350);
+        ctx.fillText("On " + date, 500, 400);
+        ctx.fillText("In the presence of " + wit1 + " and "+wit2, 500, 450);
+        var img = document.createElement("img");
+        img.src = canvas.toDataURL("image/png");
+        document.body.appendChild(img);
+    } 
 </script>
 </body>
 </html>
