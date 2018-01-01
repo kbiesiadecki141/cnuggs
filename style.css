@@ -1,5 +1,5 @@
 body {
-    background: url('images/background.jpg') ;
+    background: url('images/background.jpg') repeat fixed;
     background-size: cover;
     font-family: Courier;
     color: black;
@@ -68,7 +68,7 @@ ul li:hover ul li {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 75px;
     color: black;
     text-align: center;
 }
