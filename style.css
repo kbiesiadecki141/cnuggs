@@ -1,7 +1,7 @@
 body {
     background: url('images/background.jpg') repeat fixed;
     background-size: cover;
-    font-family: Courier;
+    font-family: benton;
     color: black;
 }
 
@@ -76,4 +76,20 @@ h2 {
     font-size: 50px;
     text-align: center;
     color: #176AB2;
+}
+
+@font-face {
+    font-family: "benton";
+    src: url("fonts/bentonsans-book.woff") format('woff');
+}
+
+@font-face {
+    font-family: "benton-medium";
+    src: url("fonts/bentonsans-medium.woff") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "benton-regular";
+    src: url("fonts/bentonsans-regular.woff") format('woff');
 }
