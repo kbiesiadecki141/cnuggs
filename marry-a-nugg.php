@@ -2,19 +2,36 @@
 <html>
 <style>
 .error {color: #FF0000;}
+.shadow{
+  font-family: 'Satisfy', cursive; 
+  font-size: 75px;
+  text-shadow:
+   -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+   1px 1px 0 #000;
+}
+#marriage-form{
+  margin: auto;
+  text-align: center;
+  border: 2px solid black;
+  background-color: white;
+  opacity: 0.9;
+  width: 50%;
+  height: 30%;
+}
 </style>
     <link href='style.css' rel='stylesheet'>
-
-    <!-- NAVIGATION BAR -->
-    <ul>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy|Tangerine" rel="stylesheet">    <!-- NAVIGATION BAR -->
+    <ul id="nav">
         <li><a href=index.html> Home </a></li>
         <li><a href=random-nugg.html> Random Nugg Generator </a></li>
         <li><a> Find a Nugg </a></li>
-        <li><a href=marry-a-nugg.html> Marry a Nugg </a></li>
+        <li><a href=marry-a-nugg.php> Marry a Nugg </a></li>
         <li><a> But, What is a Nugg? </a></li>
         <li><a> WTF is This? </a>
             <ul>
-                <li><a>The Team</a></li>
+                <li><a href=bio.html>The Team</a></li>
                 <li><a>Our Mission</a></li>
             </ul>
         </li>
@@ -77,40 +94,41 @@ function test_input($data) {
 ?>
 
 <br><br>
-<h2>Marry a Nugg</h2>
-<p><span class="error">* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  First Name: <input type="text" name="first" value="<?php echo $first;?>">
-  <span class="error">* <?php echo $firstErr;?></span>
-  <br><br>
-  Last name: <input type="text" name="last" value="<?php echo $last;?>">
-  <span class="error">* <?php echo $lastErr;?></span>
-  <br><br>
-  First witness: <input type="text" name="wit1" value="<?php echo $wit1;?>">
-  <span class="error">* <?php echo $wit1Err;?></span>
-  <br><br>
-  Second witness: <input type="text" name="wit2" value="<?php echo $wit2;?>">
-  <span class="error">* <?php echo $wit2Err;?></span>
-  <br><br>
-  <input type="submit" name="submit" value="Submit"> 
-</form>
+<h2 class="shadow">Marry a Nugg</h2>
+<div id="marriage-form">
+  <p><span class="error">* required field.</span></p>
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    First Name: <input type="text" name="first" value="<?php echo $first;?>">
+    <span class="error">* <?php echo $firstErr;?></span>
+    <br><br>
+    Last name: <input type="text" name="last" value="<?php echo $last;?>">
+    <span class="error">* <?php echo $lastErr;?></span>
+    <br><br>
+    First witness: <input type="text" name="wit1" value="<?php echo $wit1;?>">
+    <span class="error">* <?php echo $wit1Err;?></span>
+    <br><br>
+    Second witness: <input type="text" name="wit2" value="<?php echo $wit2;?>">
+    <span class="error">* <?php echo $wit2Err;?></span>
+    <br><br>
+    <input type="submit" name="submit" value="Submit"> 
+  </form>
+  <br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/D3G176wz3u8?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
-<br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D3G176wz3u8?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-
-<br><br>
+  <br><br>
+  </div>
 <!-- MARRIAGE CERTIFICATE GENERATOR -->
 <script>
     var canvas = document.createElement("canvas")
     canvas.width = 1000;
-    canvas.height = 500;
+    canvas.height = 600;
     var ctx = canvas.getContext("2d")
     ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, 1000, 500);
-    ctx.font = "30px Arial";
+    ctx.fillRect(0, 0, 1000, 600);
+    ctx.font = "120px Tangerine";
     ctx.textAlign = "center";
     ctx.fillStyle = "#000000";
-    ctx.fillText("Marriage Certificate", 500, 50);
+    ctx.fillText("Certificate of Marriage", 500, 100);
     var first = "<?php echo $first ?>"
     var last = "<?php echo $last ?>"
     var wit1 = "<?php echo $wit1 ?>"
@@ -121,17 +139,23 @@ function test_input($data) {
         months = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
                   "October", "November", "December"];
         date = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+        ctx.font = "50px Tangerine";
+        ctx.fillText("This certifies that", 500, 180);
+        ctx.font = "60px Satisfy";
+        ctx.fillText(first + " " + last, 500, 250);
+        ctx.font = "40px Tangerine";
+        ctx.fillText("and", 500, 300);
+        ctx.font = "60px Satisfy";
+        ctx.fillText("A Chicken Nugget", 500, 350);
+        ctx.font = "40px Tangerine";
+        ctx.fillText("Were Solemnly United In", 500, 420);
+        ctx.fillText("The Bonds of Holy Matrimony", 500, 470);
+        ctx.fillText("On " + date, 500, 520);
+        ctx.fillText("In the presence of " + wit1 + " and "+wit2, 500, 570);
         
-        ctx.fillText("This certifies that", 500, 100);
-        ctx.fillText(first + " " + last, 500, 150);
-        ctx.fillText("and", 500, 200);
-        ctx.fillText("A Chicken Nugget", 500, 250);
-        ctx.fillText("Were Solemnly United In", 500, 300);
-        ctx.fillText("The Bonds of Holy Matrimony", 500, 350);
-        ctx.fillText("On " + date, 500, 400);
-        ctx.fillText("In the presence of " + wit1 + " and "+wit2, 500, 450);
         var img = document.createElement("img");
         img.src = canvas.toDataURL("image/png");
+        img.setAttribute('style', "position:absolute; width:75%; margin: 5% 12% 5% 12%;");
         document.body.appendChild(img);
     } 
 </script>
