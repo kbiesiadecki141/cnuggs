@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>  
 <html>
+<link href='style.css' rel='stylesheet'>
 <style>
 .error {color: #FF0000;}
 .shadow{
@@ -22,25 +23,15 @@
 }
 </style>
     <link href='style.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css?family=Satisfy|Tangerine" rel="stylesheet">    <!-- NAVIGATION BAR -->
-    <ul id="nav">
-        <li><a href=index.html> Home </a></li>
-        <li><a href=random-nugg.html> Random Nugg Generator </a></li>
-        <li><a> Find a Nugg </a></li>
-        <li><a href=marry-a-nugg.php> Marry a Nugg </a></li>
-        <li><a> But, What is a Nugg? </a></li>
-        <li><a> WTF is This? </a>
-            <ul>
-                <li><a href=bio.html>The Team</a></li>
-                <li><a>Our Mission</a></li>
-            </ul>
-        </li>
-    </ul>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy|Tangerine" rel="stylesheet"> 
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>Chicken Nuggs</title>
 </head>
+
 <body>  
+<div w3-include-html="nav.html"></div>
 
 <?php
 $firstErr = $lastErr = $wit1Err = $wit2Err = "";
@@ -158,6 +149,9 @@ function test_input($data) {
         img.setAttribute('style', "position:absolute; width:75%; margin: 5% 12% 5% 12%;");
         document.body.appendChild(img);
     } 
+</script>
+<script>
+w3.includeHTML();
 </script>
 </body>
 </html>

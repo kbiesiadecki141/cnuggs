@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <link href='style.css' rel='stylesheet'>
-    <!-- NAVIGATION BAR -->
-    <ul id="nav">
-        <li><a href=index.html> Home </a></li>
-        <li><a href=random-nugg.html> Random Nugg Generator </a></li>
-        <li><a> Find a Nugg </a></li>
-        <li><a href=marry-a-nugg.php> Marry a Nugg </a></li>
-        <li><a> But, What is a Nugg? </a></li>
-        <li><a> WTF is This? </a>
-            <ul>
-                <li><a href=bio.html>The Team</a></li>
-                <li><a>Our Mission</a></li>
-            </ul>
-        </li>
-    </ul>
+<link href='style.css' rel='stylesheet'>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 
 <head>
 <meta charset="UTF-8">
@@ -56,8 +43,12 @@
 </script>
 
 <body id="document">
+<div w3-include-html="nav.html"></div>
     <h1>CHICKEN NUGGETS!!!!!</h1>
     <h2>Click!</h2>
     <h2>Press D to delete those nuggets</h2>
 </body>
+<script>
+w3.includeHTML();
+</script>
 </html>
