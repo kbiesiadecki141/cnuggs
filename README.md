@@ -12,3 +12,5 @@ Of course, I wanted to buy the domain. I'm pretty cheap, though, and was _not_ a
 
 To my surprise, however, the domain was on some kind of freak deal for $1! I spend more than that on stale granola bars in the vending machine. Plus, Karen was willing to invest with me. We purchased the domain for $1.17, and the rest is history.
 
+## Unfortunate Update
+It's been a few years, and GoDaddy wanted us to spend $20 on the website domain. That's too much, man. 
